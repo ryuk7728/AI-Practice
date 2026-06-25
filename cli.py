@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import random
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -12,7 +13,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 QUESTIONS_DIR = ROOT / "questions"
+SOLUTIONS_DIR = ROOT / "solutions"
 TESTS_DIR = ROOT / "tests"
+TEMPLATE_SOLUTIONS_DIR = ROOT / "templates" / "solutions"
 METADATA_PATH = ROOT / "metadata" / "questions.json"
 
 
@@ -76,6 +79,26 @@ def show_stats() -> None:
     print(f"Unsolved questions: {unsolved}")
 
 
+def reset_solutions() -> None:
+    missing_templates = []
+
+    for question in load_questions():
+        question_id = str(question["id"])
+        template_path = TEMPLATE_SOLUTIONS_DIR / f"q{question_id}.py"
+        solution_path = SOLUTIONS_DIR / f"q{question_id}.py"
+
+        if not template_path.exists():
+            missing_templates.append(str(template_path.relative_to(ROOT)))
+            continue
+
+        shutil.copyfile(template_path, solution_path)
+        print(f"Reset {solution_path.relative_to(ROOT)}")
+
+    if missing_templates:
+        missing = "\n".join(f"- {path}" for path in missing_templates)
+        raise SystemExit(f"Missing reset templates:\n{missing}")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Personal LeetCode-style practice environment for ML concepts."
@@ -93,6 +116,10 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.add_parser("test-all", help="Run the entire test suite.")
     subparsers.add_parser("random", help="Display a random question.")
     subparsers.add_parser("stats", help="Show solved and unsolved counts.")
+    subparsers.add_parser(
+        "reset",
+        help="Overwrite every solution file with its starter template.",
+    )
 
     return parser
 
@@ -116,6 +143,9 @@ def main() -> int:
         return 0
     if args.command == "stats":
         show_stats()
+        return 0
+    if args.command == "reset":
+        reset_solutions()
         return 0
 
     parser.error(f"Unknown command: {args.command}")

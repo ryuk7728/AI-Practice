@@ -1,0 +1,100 @@
+[
+  {
+    "id": "0001",
+    "title": "ReLU Activation",
+    "tags": ["numpy", "activation-functions"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0002",
+    "title": "Softmax",
+    "tags": ["numpy", "probability", "numerical-stability", "array-shapes"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0003",
+    "title": "Cross Entropy Loss",
+    "tags": ["numpy", "loss-functions", "classification"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0004",
+    "title": "Mean Squared Error Loss",
+    "tags": ["numpy", "loss-functions", "regression"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0005",
+    "title": "Linear Regression Model",
+    "tags": ["numpy", "linear-models", "object-oriented-programming"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0006",
+    "title": "Housing Data Preprocessing",
+    "tags": ["pandas", "scikit-learn", "numpy", "preprocessing", "regression"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0007",
+    "title": "Train Linear Regression",
+    "tags": ["numpy", "linear-models", "gradient-descent", "training-loop"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0008",
+    "title": "PyTorch Device Selection",
+    "tags": ["pytorch", "cuda", "device-management"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0009",
+    "title": "PyTorch Tensor Basics",
+    "tags": ["pytorch", "tensors", "numpy"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0010",
+    "title": "PyTorch Autograd Gradient",
+    "tags": ["pytorch", "autograd", "gradients"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0011",
+    "title": "PyTorch Model Accuracy",
+    "tags": ["pytorch", "classification", "evaluation"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0012",
+    "title": "MNIST Tensor DataLoader Prep",
+    "tags": ["pytorch", "dataloader", "preprocessing", "mnist"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0013",
+    "title": "PyTorch Two-Layer Classifier",
+    "tags": ["pytorch", "neural-networks", "classification"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0014",
+    "title": "PyTorch Training Loop",
+    "tags": ["pytorch", "training-loop", "classification", "optimization"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  }
+]

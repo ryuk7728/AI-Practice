@@ -19,7 +19,8 @@ Good question topics include:
 - Train/test split
 - Gradient descent
 - Batch normalization
-- PyTorch Dataset concepts, if implemented without adding PyTorch
+- Dataset loading and preprocessing
+- PyTorch Dataset concepts
 - Confusion matrix
 - Non-max suppression
 
@@ -29,10 +30,13 @@ Use:
 
 - Python 3.11+
 - NumPy
+- pandas
+- scikit-learn
 - PyTest
+- PyTorch
 - Python standard library
 
-Do not add unnecessary dependencies. Avoid adding ML frameworks unless the user explicitly asks and approves a broader project direction.
+PyTorch is allowed for PyTorch-specific practice questions. Do not add unnecessary dependencies, but it is okay to use common ML libraries when the question is specifically about them or when the user asks for them.
 
 ## Repository Structure
 
@@ -40,6 +44,9 @@ Do not add unnecessary dependencies. Avoid adding ML frameworks unless the user 
 ml-practice/
   questions/             Markdown problem statements
   solutions/             Starter function files
+  templates/
+    solutions/           Reset templates for solution files
+  helpers/               Reusable code for selected questions
   tests/                 PyTest tests for each question
   data/                  Optional data files for future questions
   metadata/
@@ -76,6 +83,8 @@ Do not include:
 - Language like "use `np.max`", "use `np.clip`", "subtract the max", or "do this with vectorized NumPy"
 
 It is okay to specify required behavior. For example, say "the result should remain finite when probabilities contain `0`." Do not say exactly how to achieve it.
+
+When a question is explicitly about a library or API, it is okay to name the library in the prompt. Still avoid spelling out the full implementation unless the user specifically wants a guided exercise.
 
 The user wants the learner to figure out the implementation based on the question and the tests.
 
@@ -129,9 +138,14 @@ When the user asks to add a question, create or update all of these:
 
 1. `questions/XXXX.md`
 2. `solutions/qXXXX.py`
-3. `tests/test_XXXX.py`
-4. `metadata/questions.json`
-5. `README.md`, if the current question list or docs need updating
+3. `templates/solutions/qXXXX.py`
+4. `tests/test_XXXX.py`
+5. `metadata/questions.json`
+6. `README.md`, if the current question list or docs need updating
+
+Some questions may intentionally depend on provided helper code. Put that code under `helpers/`, name it clearly by question id when useful, and mention the helper file in the question prompt.
+
+`templates/solutions/qXXXX.py` must match the bare starter state for the question. The CLI reset command copies every template into `solutions/`, overwriting the learner's current files.
 
 Use the next four-digit id unless the user specifies one.
 
@@ -191,6 +205,7 @@ python cli.py run 0001
 python cli.py test-all
 python cli.py random
 python cli.py stats
+python cli.py reset
 ```
 
 Do not break these commands when extending the project.
@@ -205,5 +220,8 @@ The user specifically wants:
 - Questions that force the learner to infer the implementation
 - Tests that validate correctness without prescribing source code
 - A project that is easy to extend with future ML practice questions
+- A reset template for every solution file
+- pandas and scikit-learn are now allowed for data preprocessing questions
+- PyTorch is allowed for tensor, autograd, model, and training questions
 
 When in doubt, make the problem statement clearer about expected behavior, not clearer about implementation strategy.
