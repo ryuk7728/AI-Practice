@@ -18,7 +18,7 @@ The project currently supports:
 - PyTest
 - Python standard library
 
-PyTorch is used for tensor, autograd, and model evaluation practice questions.
+PyTorch is used for tensor, autograd, model training, neural network, and Transformer practice questions.
 
 ## Repository Structure
 
@@ -30,12 +30,13 @@ AI-Practice/
     solutions/           Reset templates for solution files
   helpers/               Reusable code for selected questions
   tests/                 PyTest tests for each question
-  data/                  Optional data files for future questions
+  data/                  Datasets used by selected questions
   metadata/
     questions.json       Question index and status metadata
   cli.py                 Command line interface
   requirements.txt       Python dependencies
   pytest.ini             PyTest configuration
+  AGENTS.md              Guidance for coding agents and question authors
 ```
 
 ## Setup
@@ -155,36 +156,3 @@ python cli.py reset
 - `0023` GPT Language Model Forward Pass
 - `0024` Autoregressive Token Generation
 - `0025` GPT Parameter Initialization
-
-## Adding Future Questions
-
-To add question `0004`:
-
-1. Create a markdown prompt at `questions/0004.md`.
-2. Create starter code at `solutions/q0004.py`.
-3. Create the matching reset template at `templates/solutions/q0004.py`.
-4. Create tests at `tests/test_0004.py`.
-5. Add an entry to `metadata/questions.json`.
-6. Add helper files under `helpers/` when a question intentionally depends on provided code.
-
-Use this metadata shape:
-
-```json
-{
-  "id": "0004",
-  "title": "New Question Title",
-  "tags": ["numpy"],
-  "difficulty": "easy",
-  "status": "unsolved"
-}
-```
-
-Keep each question independent, focused, and small enough to solve in one short practice session.
-
-The file in `templates/solutions/` should be the bare starter version of the solution. The `python cli.py reset` command copies these templates into `solutions/`, overwriting any current solution work.
-
-## Expected Initial Test Behavior
-
-The starter solution files intentionally raise `NotImplementedError`.
-
-That means tests should fail at first. After you implement the functions correctly, the tests should pass.
