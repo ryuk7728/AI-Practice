@@ -96,5 +96,82 @@
     "tags": ["pytorch", "training-loop", "classification", "optimization"],
     "difficulty": "easy",
     "status": "unsolved"
+  },
+  {
+    "id": "0015",
+    "title": "PyTorch CNN Classifier",
+    "tags": ["pytorch", "cnn", "classification", "batch-normalization", "dropout"],
+    "difficulty": "medium",
+    "status": "unsolved"
+  },
+  {
+    "id": "0016",
+    "title": "Simple ResNet Classifier",
+    "tags": ["pytorch", "resnet", "cnn", "skip-connections"],
+    "difficulty": "medium",
+    "status": "unsolved"
+  },
+  {
+    "id": "0017",
+    "title": "Character-Level Text Data Split",
+    "tags": ["pytorch", "nlp", "tokenization", "preprocessing"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0018",
+    "title": "Character Sequence Batch Sampling",
+    "tags": ["pytorch", "nlp", "batching", "language-modeling"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0019",
+    "title": "Causal Self-Attention Head",
+    "tags": ["pytorch", "transformers", "self-attention", "causal-attention"],
+    "difficulty": "medium",
+    "status": "unsolved"
+  },
+  {
+    "id": "0020",
+    "title": "Multi-Head Causal Self-Attention",
+    "tags": ["pytorch", "transformers", "multi-head-attention", "causal-attention"],
+    "difficulty": "medium",
+    "status": "unsolved"
+  },
+  {
+    "id": "0021",
+    "title": "Transformer Feed-Forward Network",
+    "tags": ["pytorch", "transformers", "feed-forward", "dropout"],
+    "difficulty": "easy",
+    "status": "unsolved"
+  },
+  {
+    "id": "0022",
+    "title": "Pre-Norm Transformer Block",
+    "tags": ["pytorch", "transformers", "layer-normalization", "residual-connections"],
+    "difficulty": "medium",
+    "status": "unsolved"
+  },
+  {
+    "id": "0023",
+    "title": "GPT Language Model Forward Pass",
+    "tags": ["pytorch", "transformers", "language-modeling", "embeddings"],
+    "difficulty": "medium",
+    "status": "unsolved"
+  },
+  {
+    "id": "0024",
+    "title": "Autoregressive Token Generation",
+    "tags": ["pytorch", "transformers", "generation", "sampling"],
+    "difficulty": "medium",
+    "status": "unsolved"
+  },
+  {
+    "id": "0025",
+    "title": "GPT Parameter Initialization",
+    "tags": ["pytorch", "transformers", "weight-initialization"],
+    "difficulty": "easy",
+    "status": "unsolved"
   }
 ]

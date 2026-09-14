@@ -5,16 +5,16 @@ from solutions.q0009 import tensor_basics
 
 
 EXPECTED_KEYS = {
-    "tensor",
-    "from_numpy",
+    "direct_creation",
+    "array_conversion",
     "sum_last_axis",
     "random",
-    "shape",
-    "dtype",
-    "ndim",
+    "dimensions",
+    "element_type",
+    "dimension_count",
     "device_before_transfer",
     "transferred",
-    "numpy",
+    "array_output",
     "float_tensor",
 }
 
@@ -29,8 +29,10 @@ def test_tensor_basics_creates_expected_tensors():
     results = tensor_basics(device="cpu")
     expected = torch.tensor([[1, 2, 3], [4, 5, 6]])
 
-    torch.testing.assert_close(results["tensor"], expected.to(results["tensor"].dtype))
-    torch.testing.assert_close(results["from_numpy"], expected)
+    torch.testing.assert_close(
+        results["direct_creation"], expected.to(results["direct_creation"].dtype)
+    )
+    torch.testing.assert_close(results["array_conversion"], expected)
 
 
 def test_tensor_basics_sums_over_last_axis_with_dimensions():
@@ -52,9 +54,9 @@ def test_tensor_basics_random_tensor_has_expected_properties():
 def test_tensor_basics_reports_metadata():
     results = tensor_basics(device="cpu")
 
-    assert results["shape"] == torch.Size([2, 3])
-    assert results["dtype"] == results["from_numpy"].dtype
-    assert results["ndim"] == 2
+    assert results["dimensions"] == torch.Size([2, 3])
+    assert results["element_type"] == results["array_conversion"].dtype
+    assert results["dimension_count"] == 2
     assert results["device_before_transfer"] == torch.device("cpu")
 
 
@@ -67,8 +69,10 @@ def test_tensor_basics_transfers_to_requested_device():
 def test_tensor_basics_converts_tensor_to_numpy():
     results = tensor_basics(device="cpu")
 
-    assert isinstance(results["numpy"], np.ndarray)
-    np.testing.assert_array_equal(results["numpy"], np.array([[1, 2, 3], [4, 5, 6]]))
+    assert isinstance(results["array_output"], np.ndarray)
+    np.testing.assert_array_equal(
+        results["array_output"], np.array([[1, 2, 3], [4, 5, 6]])
+    )
 
 
 def test_tensor_basics_converts_tensor_to_float():

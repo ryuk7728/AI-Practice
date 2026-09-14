@@ -41,7 +41,7 @@ PyTorch is allowed for PyTorch-specific practice questions. Do not add unnecessa
 ## Repository Structure
 
 ```text
-ml-practice/
+AI-Practice/
   questions/             Markdown problem statements
   solutions/             Starter function files
   templates/
@@ -127,6 +127,8 @@ Each test file should:
 - Stay easy to extend
 
 Avoid tests that inspect the user's source code. Prefer behavioral tests over checking that a specific function or line of code was used.
+
+Tests should enforce correct outputs and required runtime flow, not a particular implementation strategy. Do not require specific attribute names, module containers, helper abstractions, or library APIs unless the question explicitly makes them part of the contract.
 
 It is acceptable for tests to contain expected values or internal helper logic. Keep helper logic readable and do not make tests depend on fragile formatting or implementation details.
 

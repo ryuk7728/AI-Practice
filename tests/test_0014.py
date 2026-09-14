@@ -8,7 +8,7 @@ from solutions.q0014 import train_classifier
 def reference_train_classifier(train_loader, device="cpu", epochs=2, learning_rate=0.01):
     model = TinyClassifier().to(device)
     criterion = nn.CrossEntropyLoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
     losses = []
 
     for _ in range(epochs):

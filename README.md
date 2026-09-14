@@ -23,7 +23,7 @@ PyTorch is used for tensor, autograd, and model evaluation practice questions.
 ## Repository Structure
 
 ```text
-ml-practice/
+AI-Practice/
   questions/             Markdown problem statements
   solutions/             Starter function files
   templates/
@@ -144,6 +144,17 @@ python cli.py reset
 - `0012` MNIST Tensor DataLoader Prep
 - `0013` PyTorch Two-Layer Classifier
 - `0014` PyTorch Training Loop
+- `0015` PyTorch CNN Classifier
+- `0016` Simple ResNet Classifier
+- `0017` Character-Level Text Data Split
+- `0018` Character Sequence Batch Sampling
+- `0019` Causal Self-Attention Head
+- `0020` Multi-Head Causal Self-Attention
+- `0021` Transformer Feed-Forward Network
+- `0022` Pre-Norm Transformer Block
+- `0023` GPT Language Model Forward Pass
+- `0024` Autoregressive Token Generation
+- `0025` GPT Parameter Initialization
 
 ## Adding Future Questions
 
